@@ -25,6 +25,7 @@ const registerUser = asyncHandler(async (req, res) => {
       _id: user.id,
       email: user.email,
       password: user.password,
+      token: generateJWT(user.email),
     });
   } else {
     res.status(400);
