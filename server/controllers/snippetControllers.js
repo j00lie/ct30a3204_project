@@ -31,7 +31,7 @@ const editSnippets = asyncHandler(async (req, res) => {
     throw new Error("Code snippet not found");
   }
 
-  // Check that only the authenticated user can modify their post
+  // Check that only the authenticated user can modify their post, snippets associated to users with their ids
   if (snippet.user.toString() !== req.user.id) {
     res.status(401);
     throw new Error("User not authorized");

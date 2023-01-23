@@ -43,6 +43,7 @@ const loginUser = asyncHandler(async (req, res) => {
     await user.comparePassword(password, (err, isMatch) => {
       if (err) throw err;
       if (isMatch) {
+        // If password matches return jwt
         res.json(generateJWT(user.email));
       } else {
         return res.status(403).json({ message: "Invalid credentials" });
