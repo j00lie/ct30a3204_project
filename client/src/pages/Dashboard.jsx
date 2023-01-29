@@ -18,8 +18,8 @@ function Dashboard() {
   return (
     <>
       <section className="heading">
-        <h1>Welcome {user && user.name}</h1>
-        <p>User Dashboard</p>
+        <h1>Welcome</h1>
+        <p>Post Your Own Question Here</p>
       </section>
 
       <SnippetForm />

@@ -18,6 +18,7 @@ const postSnippets = asyncHandler(async (req, res) => {
   const snippet = await codeSnippet.create({
     user: req.user.id,
     text: req.body.text,
+    code: req.body.code,
   });
   res.status(200).json(snippet);
 });

@@ -27,7 +27,7 @@ function Login() {
       toast.error(message);
     }
     if (isSucces || user) {
-      navigate("/"); // redirect to main page if success
+      navigate("/dashboard"); // redirect to main page if success
     }
     dispatch(reset());
   }, [user, isError, isSucces, message, navigate, dispatch]);

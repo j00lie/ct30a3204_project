@@ -12,9 +12,15 @@ const postSnippet = async (snippetData, token) => {
   const response = await axios.post(API_URL, snippetData, config);
   return response.data;
 };
+//Get all posts
+const getSnippets = async () => {
+  const response = await axios.get(API_URL);
+  return response.data;
+};
 
 const snippetService = {
   postSnippet,
+  getSnippets,
 };
 
 export default snippetService;

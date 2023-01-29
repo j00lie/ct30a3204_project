@@ -26,6 +26,16 @@ export const postSnippet = createAsyncThunk(
     }
   }
 );
+
+//Get posted snippets
+export const getSnippets = createAsyncThunk(
+  "snippets/getAll",
+  async (_, thunkAPI) => {
+    try {
+      return await snippetService.getSnippets();
+    } catch (error) {}
+  }
+);
 export const snippetSlice = createSlice({
   name: "snippet",
   initialState,
@@ -43,6 +53,19 @@ export const snippetSlice = createSlice({
         state.snippets.push(action.payload);
       })
       .addCase(postSnippet.rejected, (state, action) => {
+        state.isLoading = false;
+        state.isError = true;
+        state.message = action.payload;
+      })
+      .addCase(getSnippets.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(getSnippets.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.isSuccess = true;
+        state.snippets = action.payload;
+      })
+      .addCase(getSnippets.rejected, (state, action) => {
         state.isLoading = false;
         state.isError = true;
         state.message = action.payload;

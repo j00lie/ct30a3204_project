@@ -11,6 +11,7 @@ let snippetSchema = new Schema(
       ref: "User",
     },
     text: { type: String, required: [true, "Please add a code snippet"] },
+    code: { type: String },
   },
   { timestamps: true }
 );
