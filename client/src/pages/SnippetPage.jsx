@@ -1,9 +1,12 @@
-import { useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 function SnippetPage() {
-  //   const location = useLocation();
-  //   console.log(location.state);
-  return <div>SnippetPage</div>;
+  const selectedItem = useSelector((state) => state.clickedItem.selectedItem);
+  return (
+    <div>
+      <p>Selected Item: {selectedItem ? selectedItem.text : "None"}</p>
+    </div>
+  );
 }
 
 export default SnippetPage;
