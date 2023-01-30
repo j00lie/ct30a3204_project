@@ -16,7 +16,9 @@ const postSnippets = asyncHandler(async (req, res) => {
     throw new Error("Please add a code snippet");
   }
   const snippet = await codeSnippet.create({
-    user: req.user.id,
+    userId: req.user.id,
+    user: req.user.email,
+    header: req.body.heading,
     text: req.body.text,
     code: req.body.code,
   });

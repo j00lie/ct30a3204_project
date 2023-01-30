@@ -1,4 +1,4 @@
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 function SnippetThumbNail({ snippet }) {
@@ -11,9 +11,13 @@ function SnippetThumbNail({ snippet }) {
     navigate("/snippet");
   };
   return (
-    <div className="goal" onClick={() => getItem(snippet)}>
+    <div
+      className="goal"
+      onClick={() => getItem(snippet)}
+      style={{ cursor: "pointer" }}
+    >
       <div>{new Date(snippet.createdAt).toLocaleDateString()}</div>
-      <h2>{snippet.text}</h2>
+      <h2>{snippet.header}</h2>
     </div>
   );
 }

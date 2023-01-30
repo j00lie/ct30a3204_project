@@ -213,3 +213,38 @@ h3 {
     font-size: 1.5rem;
   }
 }
+
+
+/*styling for the snippetPage.jsx*/
+
+.post-container {
+  padding: 20px;
+  border: 1px solid lightgray;
+  margin-bottom: 20px;
+}
+
+.post-heading {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.post-text {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.post-code {
+  background-color: lightgray;
+  padding: 10px;
+  font-family: monospace;
+}
+
+.comment-input {
+  width: 100%;
+  height: 80px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid lightgray;
+  font-size: 16px;
+  box-sizing: border-box;
+}

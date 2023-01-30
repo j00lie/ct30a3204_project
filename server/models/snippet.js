@@ -5,11 +5,13 @@ const Schema = mongoose.Schema;
 //Associate the authenticated user with each post
 let snippetSchema = new Schema(
   {
-    user: {
+    userId: {
       type: mongoose.Schema.Types.ObjectId,
       required: true,
-      ref: "User",
+      ref: "UserID",
     },
+    user: { type: String },
+    header: { type: String },
     text: { type: String, required: [true, "Please add a code snippet"] },
     code: { type: String },
   },
