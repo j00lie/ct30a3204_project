@@ -248,3 +248,11 @@ h3 {
   font-size: 16px;
   box-sizing: border-box;
 }
+
+
+/*Styling for comments*/
+.comment {
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: lightgray;
+}

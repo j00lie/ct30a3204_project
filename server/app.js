@@ -6,6 +6,7 @@ const port = process.env.PORT;
 
 const snippetRouter = require("./routes/snippetRoutes");
 const userRouter = require("./routes/userRoutes");
+const commentRouter = require("./routes/commentRoutes");
 
 //Initialize app
 const app = express();
@@ -24,6 +25,7 @@ app.use(express.urlencoded({ extended: false }));
 //Define routes
 app.use("/api/snippets", snippetRouter);
 app.use("/api/users", userRouter);
+app.use("/api/comments", commentRouter);
 
 //Use custom error handler
 app.use(errorHandler);
