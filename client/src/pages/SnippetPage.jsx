@@ -20,6 +20,7 @@ function SnippetPage() {
           <code>{selectedItem.code}</code>
         </pre>
       </div>
+      <h2 className="post-heading">Comments</h2>
     </div>
   );
 }
