@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { postSnippet } from "../features/snippets/snippetSlice";
 
 function SnippetForm() {
+  //Hooks for posting
   const [heading, setHeading] = useState("");
   const [text, setText] = useState("");
   const [code, setCode] = useState("");
@@ -11,11 +12,13 @@ function SnippetForm() {
   const onSubmit = (e) => {
     e.preventDefault();
     dispatch(postSnippet({ heading, text, code }));
+
     //clear the form after posting
     setHeading("");
     setText("");
     setCode("");
   };
+
   return (
     <section className="form">
       <form onSubmit={onSubmit}>

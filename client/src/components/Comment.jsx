@@ -2,14 +2,14 @@ function Comment({ user, text, createdAt }) {
   return (
     <>
       <div className="comment">
-        <div className="header">
+        <div className="comment-header">
           <span className="name">{user}</span>
           <span className="date">
             {new Date(createdAt).toLocaleDateString()}
           </span>
         </div>
 
-        <div className="footer">
+        <div className="comment-text">
           <span>{text}</span>
         </div>
       </div>

@@ -1,9 +1,10 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
-
+import Spinner from "../components/Spinner";
 import CommentList from "../components/CommentList";
 import CommentForm from "../components/CommentForm";
 import { reset, getComments } from "../features/comments/commentSlice";
+import { toast } from "react-toastify";
 
 function SnippetPage() {
   //Get clicked post from global state
@@ -16,17 +17,21 @@ function SnippetPage() {
   );
 
   useEffect(() => {
+    // Toast error message if comment empty
     if (isError) {
-      console.log(message);
+      toast.error(message);
     }
+
     //Get comments with current posts ID
     dispatch(getComments(selectedItem._id));
 
     return () => {
       dispatch(reset());
     };
-  }, [isError, message, dispatch]);
-
+  }, [isError, message, dispatch, selectedItem]);
+  if (isLoading) {
+    return <Spinner />;
+  }
   return (
     <div className="page-container">
       <div className="post-container">
@@ -35,8 +40,8 @@ function SnippetPage() {
           {selectedItem ? selectedItem.header : "None"}
         </h1>
         <p>
-          Asked: {new Date(selectedItem.createdAt).toLocaleDateString()} By:{" "}
-          {selectedItem.user}
+          Asked: {new Date(selectedItem.createdAt).toLocaleDateString()} <br />{" "}
+          By: {selectedItem.user}
         </p>
         <p className="post-text">{selectedItem.text}</p>
         <pre className="post-code">

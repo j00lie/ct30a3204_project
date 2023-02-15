@@ -6,13 +6,14 @@ function SnippetThumbNail({ snippet }) {
   const navigate = useNavigate();
 
   const getItem = (snippet) => {
-    console.log(snippet);
+    //console.log(snippet);
+
     dispatch(dispatch({ type: "SET_SELECTED_ITEM", payload: snippet }));
     navigate("/snippet");
   };
   return (
     <div
-      className="goal"
+      className="snippet"
       onClick={() => getItem(snippet)}
       style={{ cursor: "pointer" }}
     >

@@ -10,7 +10,7 @@ function CommentForm() {
   const dispatch = useDispatch();
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log(postId);
+    //console.log(postId);
     dispatch(postComment({ postId, text }));
     //clear the form after posting
 

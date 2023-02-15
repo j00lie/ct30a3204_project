@@ -12,7 +12,7 @@ let snippetSchema = new Schema(
     },
     user: { type: String },
     header: { type: String },
-    text: { type: String, required: [true, "Please add a code snippet"] },
+    text: { type: String, required: true },
     code: { type: String },
   },
   { timestamps: true }

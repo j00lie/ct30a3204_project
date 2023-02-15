@@ -14,6 +14,6 @@ router.post("/", registerUser);
 //Login user
 router.post("/login", loginUser);
 //Get user data
-router.get("/me", passport.authenticate("jwt", { session: false }), getUser);
+//router.get("/me", passport.authenticate("jwt", { session: false }), getUser);
 
 module.exports = router;

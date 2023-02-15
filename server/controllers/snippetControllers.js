@@ -11,18 +11,19 @@ const getSnippets = asyncHandler(async (req, res) => {
 
 //Post a new code snippet
 const postSnippets = asyncHandler(async (req, res) => {
-  if (!req.body.text) {
+  if (!(req.body.text && req.body.heading && req.body.code)) {
     res.status(400);
-    throw new Error("Please add a code snippet");
+    throw new Error("Please add all fields");
+  } else {
+    const snippet = await codeSnippet.create({
+      userId: req.user.id,
+      user: req.user.email,
+      header: req.body.heading,
+      text: req.body.text,
+      code: req.body.code,
+    });
+    res.status(200).json(snippet);
   }
-  const snippet = await codeSnippet.create({
-    userId: req.user.id,
-    user: req.user.email,
-    header: req.body.heading,
-    text: req.body.text,
-    code: req.body.code,
-  });
-  res.status(200).json(snippet);
 });
 
 // Edit existing post

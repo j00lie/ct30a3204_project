@@ -15,7 +15,7 @@ const postComment = asyncHandler(async (req, res) => {
     res.status(400);
     throw new Error("Please add text");
   }
-  console.log(req.body);
+  //console.log(req.body);
   const newComment = await comment.create({
     userId: req.user.id,
     postId: req.body.postId,

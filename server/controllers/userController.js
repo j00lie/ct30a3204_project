@@ -1,10 +1,17 @@
 const jwt = require("jsonwebtoken");
-const { body, validationResult } = require("express-validator");
+
 const asyncHandler = require("express-async-handler");
 const User = require("../models/user");
 
+//Register user
 const registerUser = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
+
+  //Check that both fields are filled
+  if (!(email && password)) {
+    res.status(400);
+    throw new Error("Fill both fields");
+  }
 
   // Check if user exists
   const userExists = await User.findOne({ email });
@@ -33,20 +40,26 @@ const registerUser = asyncHandler(async (req, res) => {
   }
 });
 
+//User Login
 const loginUser = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
-
+  //Check that both fields are filled
+  if (!(email && password)) {
+    res.status(400);
+    throw new Error("Fill both fields");
+  }
+  //Check user exists
   const user = await User.findOne({ email });
   if (!user) {
-    return res.status(403).json({ message: "Invalid credentials" });
+    res.status(400);
+    throw new Error("Invalid credentials");
   } else {
     await user.comparePassword(password, (err, isMatch) => {
-      if (err) throw err;
       if (isMatch) {
         // If password matches return jwt
         res.json(generateJWT(user.email));
       } else {
-        return res.status(403).json({ message: "Invalid credentials" });
+        res.status(400).json({ message: err });
       }
     });
   }

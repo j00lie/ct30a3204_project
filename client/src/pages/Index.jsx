@@ -43,7 +43,7 @@ function Index() {
 
       <section className="content">
         {snippets.length > 0 ? (
-          <div className="goals">
+          <div className="snippets">
             {snippets.map((snippet) => (
               <SnippetItem key={snippet._id} snippet={snippet} />
             ))}
