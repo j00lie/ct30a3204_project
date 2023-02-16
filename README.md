@@ -14,3 +14,9 @@ App for posting and commenting coding problems using the MERN-stack with Redux.
 - Run development server (client and server concurrently)
   - `cd ..`
   - `npm run dev`  
+  
+## Usage
+
+https://user-images.githubusercontent.com/77616344/219385166-9a168c3e-e9e2-44eb-ad25-a13c42ee20d6.mp4
+
+
