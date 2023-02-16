@@ -1,3 +1,5 @@
+/*Add Redux reducers here */
+
 import { configureStore } from "@reduxjs/toolkit";
 import authReducer from "../features/auth/authSlice";
 import snippetReducer from "../features/snippets/snippetSlice";

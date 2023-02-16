@@ -4,6 +4,7 @@ import authService from "./authService";
 
 const user = JSON.parse(localStorage.getItem("user"));
 
+//set initial state
 const initialState = {
   user: user ? user : null, // check if user exists in local storage
   isError: false,
@@ -42,11 +43,13 @@ export const login = createAsyncThunk("auth/login", async (user, thunkAPI) => {
     return thunkAPI.rejectWithValue(message);
   }
 });
+
 //Logout
 export const logout = createAsyncThunk("auth/logout", async () => {
   await authService.logout(user);
 });
 
+//Create state reducers for authentication actions
 export const authSlice = createSlice({
   name: "auth",
   initialState,

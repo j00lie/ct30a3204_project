@@ -7,6 +7,9 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "./index.css";
 
+// get styling for code highlighting on snippetPage.jsx
+import "../node_modules/highlight.js/styles/stackoverflow-light.css";
+
 const container = document.getElementById("root");
 const root = createRoot(container);
 

@@ -1,3 +1,5 @@
+/*Component for posting a code snippet */
+
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { postSnippet } from "../features/snippets/snippetSlice";

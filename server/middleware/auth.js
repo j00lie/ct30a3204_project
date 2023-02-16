@@ -1,3 +1,5 @@
+//Authentication middleware here with passport
+
 const passportJWT = require("passport-jwt");
 const passport = require("passport");
 const mongoose = require("mongoose");

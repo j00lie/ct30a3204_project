@@ -1,3 +1,5 @@
+/*Component for posting a comment to a post */
+
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { postComment } from "../features/comments/commentSlice";
@@ -13,7 +15,6 @@ function CommentForm() {
     //console.log(postId);
     dispatch(postComment({ postId, text }));
     //clear the form after posting
-
     setText("");
   };
 

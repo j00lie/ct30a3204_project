@@ -1,15 +1,15 @@
-//Functionality of the code snippet routes implemented here
+//Functionality of the comment routes implemented here
 
 const asyncHandler = require("express-async-handler"); // Handle exceptions inside asynchronous routes
 const comment = require("../models/comment");
 
-// Get all code snippets
+// Get all comments
 const getComments = asyncHandler(async (req, res) => {
   const comments = await comment.find({ postId: req.params.id });
   res.status(200).json(comments);
 });
 
-//Post a new code snippet
+//Post a new comment
 const postComment = asyncHandler(async (req, res) => {
   if (!req.body.text) {
     res.status(400);

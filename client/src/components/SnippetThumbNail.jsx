@@ -1,3 +1,5 @@
+/*Component for showing all the posted code snippets on the index page */
+
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 

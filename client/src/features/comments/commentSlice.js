@@ -7,12 +7,12 @@ const initialState = {
   isLoading: false,
   message: "",
 };
-//Create new code snippet
+//Create new comment
 export const postComment = createAsyncThunk(
   "comments/post",
   async (commentData, thunkAPI) => {
     try {
-      //Get jwt through thunkAPI so that only auhtenticated users can post code
+      //Get jwt through thunkAPI so that only auhtenticated users can post
       const token = thunkAPI.getState().auth.user;
       return await commentService.postComment(commentData, token);
     } catch (e) {

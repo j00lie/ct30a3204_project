@@ -4,7 +4,7 @@ const express = require("express");
 const router = express.Router();
 const Comment = require("../models/comment");
 const passport = require("passport");
-require("../middleware/auth"); //Protect comment post, put and delete routes with authentication
+require("../middleware/auth"); //Protect comment post route with authentication
 const {
   getComments,
   postComment,

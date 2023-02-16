@@ -1,3 +1,5 @@
+/*Component for a single comment */
+
 function Comment({ user, text, createdAt }) {
   return (
     <>
@@ -9,8 +11,8 @@ function Comment({ user, text, createdAt }) {
           </span>
         </div>
 
-        <div className="comment-text">
-          <span>{text}</span>
+        <div>
+          <p className="comment-text">{text}</p>
         </div>
       </div>
     </>

@@ -15,6 +15,8 @@
 // export const { reset } = postSlice.actions;
 // export default postSlice.reducer;
 
+//Create a simple reducer for selecting a post to the global state
+
 const initialState = {
   selectedItem: null,
 };

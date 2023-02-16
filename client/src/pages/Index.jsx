@@ -1,3 +1,5 @@
+/*Page for listing all the posts */
+
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -21,6 +23,7 @@ function Index() {
     if (isError) {
       console.log(message);
     }
+    //Fetch all posts
     dispatch(getSnippets());
 
     return () => {

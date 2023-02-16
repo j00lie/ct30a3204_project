@@ -1,3 +1,5 @@
+/*Page for showing a single post and related comments */
+
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import Spinner from "../components/Spinner";
@@ -5,6 +7,7 @@ import CommentList from "../components/CommentList";
 import CommentForm from "../components/CommentForm";
 import { reset, getComments } from "../features/comments/commentSlice";
 import { toast } from "react-toastify";
+import Highlight from "react-highlight";
 
 function SnippetPage() {
   //Get clicked post from global state
@@ -19,7 +22,7 @@ function SnippetPage() {
   useEffect(() => {
     // Toast error message if comment empty
     if (isError) {
-      toast.error(message);
+      toast.error(message + ": Must be logged in to comment.");
     }
 
     //Get comments with current posts ID
@@ -44,9 +47,13 @@ function SnippetPage() {
           By: {selectedItem.user}
         </p>
         <p className="post-text">{selectedItem.text}</p>
-        <pre className="post-code">
-          <code>{selectedItem.code}</code>
-        </pre>
+        <div className="post-code">
+          <Highlight>
+            <pre>
+              <code>{selectedItem.code}</code>
+            </pre>
+          </Highlight>
+        </div>
       </div>
 
       <CommentForm />

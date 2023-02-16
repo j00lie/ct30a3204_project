@@ -1,3 +1,5 @@
+/*Page for posting users own question/code after authentication */
+
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";

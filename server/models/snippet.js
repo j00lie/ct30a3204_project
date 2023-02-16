@@ -1,3 +1,5 @@
+//Db schema for a post
+
 const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;

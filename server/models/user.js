@@ -1,3 +1,10 @@
+/*Db schema for user. 
+Password hashing and verification encapsulated in this model
+
+https://www.mongodb.com/blog/post/password-authentication-with-mongoose-part-1
+
+*/
+
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 const Schema = mongoose.Schema;

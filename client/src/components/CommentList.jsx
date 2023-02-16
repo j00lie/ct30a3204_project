@@ -1,3 +1,5 @@
+/*Component for listing all posted comments under the post */
+
 import Comment from "./Comment";
 
 function CommentList({ comments }) {

@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import snippetService from "./snippetService";
 
+//Define initial state
 const initialState = {
   snippets: [],
   isError: false,
@@ -36,6 +37,8 @@ export const getSnippets = createAsyncThunk(
     } catch (error) {}
   }
 );
+
+//Create reducers
 export const snippetSlice = createSlice({
   name: "snippet",
   initialState,
