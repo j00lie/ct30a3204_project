@@ -1,5 +1,5 @@
 # LUT CT30A3204 Advanced Web Applications Project Work
-App for posting and commenting coding problems using the MERN-stack with Redux. 
+App for posting and commenting on coding problems using the MERN-stack with Redux. 
 
 ## Installation
 - Prerequisites
