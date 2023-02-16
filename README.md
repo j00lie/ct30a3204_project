@@ -4,10 +4,10 @@ App for posting and commenting coding problems using the MERN-stack with Redux.
 ## Installation
 - Prerequisites
   - MongoDB ([Alternatively configure the cloud version](https://www.mongodb.com/docs/manual/tutorial/getting-started/))
-  - Node.js (Built with v. 14.22.12)
+  - Node.js (Built with v. 14.22.12)  
 - Install dependencies
   - Backend
-    - `npm install`
+    - `npm install` in root
   - Frontend
     - `cd client`
     - `npm install`
